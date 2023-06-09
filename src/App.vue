@@ -1,10 +1,48 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <h4 class="title">EDMO</h4>
+    <div id="links">
+      <router-link to="/" class="link material-symbols-outlined">home</router-link>
+      <router-link to="/projects" class="link material-symbols-outlined">view_cozy</router-link>
+      <a href="https://github.com/edmaor" target="_blank" rel="noopener noreferrer" class="link-img">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <image xlink:href="../resources/icons/github.svg" width="100%" height="100%" />
+        </svg>
+      </a>
+    </div>
+    <h5>CONTACT</h5>
+    <div id="links">
+      <a href="mailto:edmaor128@gmail.com" class="link material-symbols-outlined">mail</a>
+      <a href="https://github.com/edmaor" target="_blank" rel="noopener noreferrer" class="link-img">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <image xlink:href="../resources/icons/linkedin.svg" width="100%" height="100%" />
+        </svg>
+      </a>
+    </div>
   </nav>
   <router-view/>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      expanded: true
+    }
+  },
+  methods: {
+    toggle_menu() {
+      this.expanded = !this.expanded
+    },
+    menuToggled() {
+      if (this.expanded) {
+        return "expanded"
+      }
+      return "collapsed"
+    }
+  },
+}
+</script>
 
 <style>
 #app {
@@ -15,16 +53,46 @@
   color: #2c3e50;
 }
 
+body {
+  background: #dde7ec;
+}
+
 nav {
-  padding: 30px;
+  position: fixed; top: 0; left: 0;
+  height: 100%; width: 72px;
+  padding: 18px 0;
+  display: flex;
+  background: #1F1F22;
+  flex-direction: column;
+  text-align: center;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+nav > .title {
+  margin: 4px 0 16px;
+  color: #dde7ec;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+#links {
+  background: #161619;
+}
+
+#links .link {
+  margin: 18px 14px;
+  padding: 2px 0 4px;
+  display: block;
+  color: #CBE2EC;
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+#links .link-img {
+  margin: 21px;
+  display: block;
+}
+
+nav .link.router-link-exact-active {
+  border-radius: 12px;
+  background: rgba(66, 185, 131,0.72);
 }
 </style>
