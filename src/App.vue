@@ -10,17 +10,19 @@
         </svg>
       </a>
     </div>
-    <h5>CONTACT</h5>
+    <p class="invisible">CONTACT</p>
     <div id="links">
       <a href="mailto:edmaor128@gmail.com" class="link material-symbols-outlined">mail</a>
-      <a href="https://github.com/edmaor" target="_blank" rel="noopener noreferrer" class="link-img">
+      <a href="https://www.linkedin.com/in/eduardo-martorell-ortu%C3%B1o/" target="_blank" rel="noopener noreferrer" class="link-img">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <image xlink:href="../resources/icons/linkedin.svg" width="100%" height="100%" />
         </svg>
       </a>
     </div>
   </nav>
-  <router-view/>
+  <div id="content">
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -51,6 +53,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+h4, h5 {
+  margin: auto;
+  font-weight: bold;
+}
+
+.invisible {
+  margin: auto;
+  visibility: hidden;
 }
 
 body {
@@ -94,5 +106,9 @@ nav > .title {
 nav .link.router-link-exact-active {
   border-radius: 12px;
   background: rgba(66, 185, 131,0.72);
+}
+
+#content {
+  margin: auto 24px auto 96px;
 }
 </style>
