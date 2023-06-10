@@ -18,6 +18,11 @@
           <image xlink:href="../resources/icons/linkedin.svg" width="100%" height="100%" />
         </svg>
       </a>
+      <a href="https://www.linkedin.com/in/eduardo-martorell-ortu%C3%B1o/" target="_blank" rel="noopener noreferrer" class="link-img">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <image xlink:href="../resources/icons/infojobs.svg" width="100%" height="100%" />
+        </svg>
+      </a>
     </div>
   </nav>
   <div id="content">
