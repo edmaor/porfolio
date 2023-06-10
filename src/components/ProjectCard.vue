@@ -3,7 +3,7 @@
     <h2 class="pc-title">{{ project.id }}</h2>
     <p class="pc-description">{{ project.description }}</p>
     <img :src="project.img" alt="">
-    <button class="pc-button">DETAILS</button>
+    <router-link class="pc-button" :to="'/project/' + project.id" >DETAILS</router-link>
     <a class="pc-button" v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer">SITE</a>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 .project-card {
     margin: 24px;
     border-radius: 24px;
-    width: 364px;
+    width: 320px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background: #fefefa;
