@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style>
+*::-webkit-scrollbar {
+  display: none;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -79,6 +82,7 @@ nav {
   height: 100%; width: 72px;
   padding: 18px 0;
   display: flex;
+  overflow: scroll;
   background: #1F1F22;
   flex-direction: column;
   text-align: center;
