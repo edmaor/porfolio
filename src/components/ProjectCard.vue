@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="project-card card">
     <h2 class="pc-title">{{ project.id }}</h2>
     <p class="pc-description">{{ project.description }}</p>
     <img :src="project.img" alt="">
@@ -15,15 +15,6 @@ export default {
 </script>
 
 <style>
-.project-card {
-    margin: 24px;
-    border-radius: 24px;
-    width: 320px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background: #fefefa;
-}
-
 .project-card .pc-title {
     grid-column: 1/ span 3;
 }
