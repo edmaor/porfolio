@@ -37,25 +37,45 @@ export default {
   wrap;
 }
 
-.card {
-    margin: 24px 24px 24px 0;
-    border-radius: 24px;
-    width: 320px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background: #fefefa;
+.repo {
+  width: 320px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  background: #1F1F22ec;
 }
 
-@media (max-width: 420px) {
-  .card {
-    width: 240px;
-    margin: 8px 8px 8px 0;
-  }
+.repo .repo-title {
+    grid-column: 1/ span 3;
+    grid-row: 1;
+    margin: 8px auto 0;
+    color: #dde7ec;
 }
 
-@media (max-width: 800px) {
-  .card {
-    width: 280px;
-  }
+.repo .repo-description {
+    margin: auto 8px;
+    grid-column: 2;
+    color: #dde7ec;
+}
+.repo .repo-img {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 8px auto;
+    border-radius: 12px;
+    height: 72px;
+    background: #dde7ec;
+}
+
+.repo .repo-button {
+    grid-column: 2;
+    margin: 8px auto;
+    border: none; border-radius: 8px;
+    width: 100%;
+    height: 32px;
+    background: #2c3e50;
+    text-decoration: none;
+    color: #fefefa;
+    line-height: 32px;
+    text-align: center;
+    font-weight: bold;
 }
 </style>

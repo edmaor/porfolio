@@ -8,30 +8,30 @@
     <p>Looking ahead, I want to master both front-end and back-end development, seamlessly bringing ideas to life. Becoming a full-stack developer will give me the versatility to tackle any project and contribute throughout the entire software development lifecycle.</p>
 </div>
 <div id="knowledge">
-    <div class="knowledge">
+    <div class="card knowledge">
         <h3 class="kn-title">Programming Languages</h3>
         <h4>Java</h4><p></p>
         <h4>Python</h4><p></p>
         <hr><hr>
         <h4>JavaScript</h4><p></p>
         <h4>HTML</h4><p></p>
-        <h4>CSS</h4><p></p>
+        <h4>CSS</h4><p>Tailwind | Bootstrap</p>
     </div>
-    <div class="knowledge">
+    <div class="card knowledge">
         <h3 class="kn-title">Databases</h3>
         <h4>MongoDB</h4><p></p>
         <h4>MySQL</h4>
     </div>
-    <div class="knowledge">
+    <div class="card knowledge">
         <h3 class="kn-title">Cloud Frameworks</h3>
         <h4>Docker</h4><p></p>
         <h4>AWS</h4><p>EC2</p>
     </div>
-    <div class="knowledge">
+    <div class="knowledge card">
         <h3 class="kn-title">Other Frameworks</h3>
         <h4>VUE</h4><p></p>
     </div>
-    <div class="knowledge">
+    <div class="knowledge card">
         <h3 class="kn-title">Languages</h3>
         <h4>Spanish</h4><p>Native</p>
         <h4>Catalan</h4><p>Native</p>
@@ -60,13 +60,13 @@ export default {
     display: grid;
 }
 .knowledge {
-    margin: 32px 24px;
-    border-radius: 24px;
-    padding: 0 0 12px;
     display: grid;
-    grid-template-columns: 128px 1fr;
     gap: 2px;
-    background: #fefefa;
+    grid-template-columns: 128px 1fr;
+}
+
+.knowledge h4, .knowledge p {
+    margin: auto;
 }
 
 .kn-title {
@@ -76,22 +76,42 @@ export default {
 .chart {
     margin: auto auto 48vh;
 }
-
-@media (min-width: 320px) {
+.card {
+    margin: 32px 24px;
+    border: #2c3e50ca solid 1px;
+    border-radius: 24px;
+    padding: 0 0 12px;
+    background: #fefefa;
+    box-shadow: #2c3e506f 4px 6px 12px 4px;
+}
+@media (max-width: 420px) {
     #knowledge {
         grid-template-columns: 1fr;
     }
-}
-
-@media (min-width: 720px) {
-    #knowledge {
-        grid-template-columns: 1fr 1fr;
+    .card {
+        width: 240px;
+        margin: 8px 8px 8px 0;
     }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 800px) {
+    #knowledge {
+        grid-template-columns: 1fr 1fr;
+    }
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1200px) {
     #knowledge {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1201px) {
+    #knowledge {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="project-card card">
-    <h2 class="pc-title">{{ project.id }}</h2>
-    <p class="pc-description">{{ project.description }}</p>
-    <img :src="project.img" alt="">
-    <router-link class="pc-button" :to="'/project/' + project.id" >DETAILS</router-link>
-    <a class="pc-button" v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer">SITE</a>
+  <div class="card repo">
+    <img :src="project.img" alt="" class="repo-img"/>
+    <h2 class="repo-title">{{ project.id }}</h2>
+    <p class="repo-description">{{ project.description }}</p>
+    <router-link class="repo-button" :to="'/project/' + project.id" >DOCUMENTATION</router-link>
+    <a class="repo-button" v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer">SITE</a>
   </div>
 </template>
 
@@ -13,34 +13,3 @@ export default {
     props: ['project']
 }
 </script>
-
-<style>
-.project-card .pc-title {
-    grid-column: 1/ span 3;
-}
-
-.project-card .pc-description {
-    margin: auto 8px;
-    grid-column: 1 / span 2;
-    text-align: justify;
-}
-.project-card img {
-    height: 48px;
-    grid-column: 3;
-}
-
-.project-card .pc-button {
-    grid-column: 2;
-    margin: 8px auto;
-    border: none; border-radius: 8px;
-    width: 100%;
-    height: 32px;
-    background: #2c3e50;
-    text-decoration: none;
-    color: #fefefa;
-    line-height: 32px;
-    text-align: center;
-    font-weight: bold;
-}
-
-</style>
