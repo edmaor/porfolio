@@ -38,9 +38,10 @@ export default {
 }
 
 .repo {
+  border: #2c3e50ca solid 1px;
   width: 320px;
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 6fr 1fr;
   background: #1F1F22ec;
 }
 
@@ -77,5 +78,12 @@ export default {
     line-height: 32px;
     text-align: center;
     font-weight: bold;
+}
+
+@media (max-width: 420px) {
+  .repo {
+    width: 280px;
+    margin: 18px auto;
+  }
 }
 </style>

@@ -39,8 +39,10 @@
     </div>
 </div>
 <hr>
-<h2>My Github contributions last year</h2>
-<img class="chart" src="https://ghchart.rshah.org/edmaor" alt="Edu's Github chart" />
+<div class="chart">
+    <h2>My Github contributions last year</h2>
+    <img class="chart" src="https://ghchart.rshah.org/edmaor" alt="Edu's Github chart" />
+</div>
 </template>
 
 <script>
@@ -57,12 +59,15 @@ export default {
 }
 
 #knowledge {
-    display: grid;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 .knowledge {
     display: grid;
-    gap: 2px;
+    gap: 3px;
     grid-template-columns: 128px 1fr;
+    border: none;
 }
 
 .knowledge h4, .knowledge p {
@@ -78,41 +83,16 @@ export default {
 }
 .card {
     margin: 32px 24px;
-    border: #2c3e50ca solid 1px;
     border-radius: 24px;
+    width: 320px;
     padding: 0 0 12px;
     background: #fefefa;
     box-shadow: #2c3e506f 4px 6px 12px 4px;
 }
-@media (max-width: 420px) {
-    #knowledge {
-        grid-template-columns: 1fr;
-    }
-    .card {
-        width: 240px;
-        margin: 8px 8px 8px 0;
+
+@media (max-width: 480px) {
+    .chart {
+        display: none;
     }
 }
-
-@media (max-width: 800px) {
-    #knowledge {
-        grid-template-columns: 1fr 1fr;
-    }
-    .card {
-        width: 280px;
-    }
-}
-
-@media (max-width: 1200px) {
-    #knowledge {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media (min-width: 1201px) {
-    #knowledge {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-}
-
 </style>

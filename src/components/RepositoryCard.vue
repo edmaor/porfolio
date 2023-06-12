@@ -11,6 +11,3 @@ export default {
     props:['repository']
 }
 </script>
-
-<style>
-</style>
