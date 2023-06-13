@@ -8,7 +8,7 @@
         <div id="p-documentation">
             <div id="pdf-nav">
                 <button @click="page--" :disabled="page <= 1">←</button>
-                <input type="text" v-model="page"> ⚭ {{ pageCount }}
+                {{ page }} ⚭ {{ pageCount }}
                 <button @click="page++" :disabled="page >= pageCount"> → </button>
             </div>
             <vue-pdf-embed ref="pdfRef" :page="page" :source="documentationPath" @rendered="handleDocumentRender" @password-requested="handlePasswordRequest"/>
@@ -66,13 +66,22 @@ export default {
     background: #2c3e5048;
 }
 #pdf-nav button {
-    margin: 8px 14px;
+    margin: 8px;
     border: none;
+    border-radius: 8px;
+    padding: 0 8px 3px;
     background: #2c3e50;
     color: #CBE2EC;
-    text-align: center;
-    text-decoration: none;
     font-size: 28px;
+}
+#pdf-nav button:hover {
+    cursor: pointer;
+}
+#pdf-nav button:disabled {
+    background: #2c3e50cc;
+}
+#pdf-nav button:disabled:hover {
+    cursor: default;
 }
 #pdf-nav input[type=text] {
     background: none;
