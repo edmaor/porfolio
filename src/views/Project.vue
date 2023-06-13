@@ -6,8 +6,14 @@
         <h1>{{ project.id }}</h1>
         <h3>{{ project.description }}</h3>
         <div id="p-documentation">
-            <vue-pdf-embed :source="documentationPath" @rendered="handleDocumentRender" :width="720"/>
+            <div id="pdf-nav">
+                <button @click="page--" :disabled="page <= 1">←</button>
+                <input type="text" v-model="page"> ⚭ {{ pageCount }}
+                <button @click="page++" :disabled="page >= pageCount"> → </button>
+            </div>
+            <vue-pdf-embed ref="pdfRef" :page="page" :source="documentationPath" @rendered="handleDocumentRender" @password-requested="handlePasswordRequest"/>
         </div>
+        
     </div>
 </template>
 <script>
@@ -16,6 +22,9 @@ import projects from '../../resources/data/projects.json'
 export default {
     data() {
         return {
+            page: 1,
+            pageCount: 1,
+            showAllPages: false,
             project: null,
             isLoading: true,
             documentationPath: ''
@@ -33,6 +42,7 @@ export default {
     methods: {
     handleDocumentRender(args) {
       console.log(args)
+      this.pageCount = this.$refs.pdfRef.pageCount
       this.isLoading = false
     },
     handlePasswordRequest(callback, retry) {
@@ -45,12 +55,28 @@ export default {
 
 <style>
 #p-documentation {
-    max-height: 1000px;
-    background: #2c3e50;
+    margin: auto;
     display: inline-block;
-    overflow: scroll;
+    width: 100%;
+    max-width: 900px;
 }
-#p-documentation > * {
-    margin: 32px 48px;
+#pdf-nav {
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+    background: #2c3e5048;
+}
+#pdf-nav button {
+    margin: 8px 14px;
+    border: none;
+    background: #2c3e50;
+    color: #CBE2EC;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+}
+#pdf-nav input[type=text] {
+    background: none;
+    border: none;
+    width: 24px;
 }
 </style>

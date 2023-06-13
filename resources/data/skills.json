@@ -4,11 +4,11 @@
         "knowledge": [
             {
                 "name": "Python",
-                "frameworks": ["Django", "Flask"]
+                "frameworks": ["Django"]
             },
             {
                 "name": "Java",
-                "frameworks": ["Spring Boot"]
+                "frameworks": ["Spring Boot", "Android"]
             },
             {
                 "name": "JavaScript",
