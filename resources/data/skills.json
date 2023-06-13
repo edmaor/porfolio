@@ -1,0 +1,84 @@
+[
+    {
+        "title": "Programming languages",
+        "knowledge": [
+            {
+                "name": "Python",
+                "frameworks": ["Django", "Flask"]
+            },
+            {
+                "name": "Java",
+                "frameworks": ["Spring Boot"]
+            },
+            {
+                "name": "JavaScript",
+                "frameworks": ["Vue.js","Node.js", "React", "Axios", "Oauth"]
+            },
+            {
+                "name": "HTML5",
+                "frameworks": []
+            },
+            {
+                "name": "CSS3",
+                "frameworks": ["Bootstrap", "Tailwind CSS"]
+            }
+        ]
+    },
+    {
+        "title": "Data",
+        "knowledge": [
+            {
+                "name": "SQL",
+                "frameworks": ["MySQL", "PostgreSQL"]
+            },
+            {
+                "name": "NoSQL",
+                "frameworks": ["MongoDB"]
+            },
+            {
+                "name": "Data formats",
+                "frameworks": ["JSON", "XML", "CSV"]
+            }
+        ]
+    },
+    {
+        "title": "Methodologies",
+        "knowledge": [
+            {
+                "name": "Agile",
+                "frameworks": ["Sprint"]
+            },
+            {
+                "name": "DevOps",
+                "frameworks": ["CI/CD", "Microservices","Docker"]
+            }
+        ]
+    },
+    {
+        "title": "Cloud frameworks",
+        "knowledge": [
+            {
+                "name": "AWS",
+                "frameworks": ["EC2", "Lambda"]
+            }
+        ]
+    },
+    {
+        "title": "Containerization",
+        "knowledge": [
+            {
+                "name": "Docker",
+                "frameworks": []
+            }
+        ]
+    },
+    {
+        "title": "Version control",
+        "knowledge": [
+            {
+                "name": "Git",
+                "frameworks": ["Github", "Gitlab"]
+            }
+        ]
+    }
+]

@@ -7,36 +7,20 @@
         Programming isn't just a career path for me; it's a genuine passion. I spend my free time exploring different coding concepts, experimenting with new languages, and delving into various frameworks and libraries. Whether it's reading programming books, following online tutorials, or participating in coding challenges, I'm always looking for ways to improve and expand my knowledge.</p>
     <p>Looking ahead, I want to master both front-end and back-end development, seamlessly bringing ideas to life. Becoming a full-stack developer will give me the versatility to tackle any project and contribute throughout the entire software development lifecycle.</p>
 </div>
-<div id="knowledge">
-    <div class="card knowledge">
-        <h3 class="kn-title">Programming Languages</h3>
-        <h4>Java</h4><p></p>
-        <h4>Python</h4><p></p>
-        <hr><hr>
-        <h4>JavaScript</h4><p></p>
-        <h4>HTML</h4><p></p>
-        <h4>CSS</h4><p>Tailwind | Bootstrap</p>
+<div id="skills">
+    <div class="card skill" v-for="skill in skillList" :key="skill.title">
+        <h3 class="title">{{ skill.title }}</h3>
+        <div class="knowledge" v-for="knowledge in skill.knowledge" :key="knowledge.name">
+            <h4 class="kn-name">{{ knowledge.name }}</h4>
+            <p class="kn-frame" v-for="framework in knowledge.frameworks" :key="framework">{{ framework }}</p>
+        </div>
     </div>
-    <div class="card knowledge">
-        <h3 class="kn-title">Databases</h3>
-        <h4>MongoDB</h4><p></p>
-        <h4>MySQL</h4>
-    </div>
-    <div class="card knowledge">
-        <h3 class="kn-title">Cloud Frameworks</h3>
-        <h4>Docker</h4><p></p>
-        <h4>AWS</h4><p>EC2</p>
-    </div>
-    <div class="knowledge card">
-        <h3 class="kn-title">Other Frameworks</h3>
-        <h4>VUE</h4><p></p>
-    </div>
-    <div class="knowledge card">
-        <h3 class="kn-title">Languages</h3>
-        <h4>Spanish</h4><p>Native</p>
-        <h4>Catalan</h4><p>Native</p>
-        <h4>English</h4><p>B2</p>
-    </div>
+</div>
+<div class="knowledge card">
+    <h3 class="kn-title">Languages</h3>
+    <h4>Spanish</h4><p>Native</p>
+    <h4>Catalan</h4><p>Native</p>
+    <h4>English</h4><p>B2</p>
 </div>
 <hr>
 <div class="chart">
@@ -46,8 +30,13 @@
 </template>
 
 <script>
+import skills from '../../resources/data/skills.json'
 export default {
-
+    data() {
+        return {
+            skillList: skills
+        }
+    }
 }
 </script>
 
@@ -58,24 +47,38 @@ export default {
     text-align: justify;
 }
 
-#knowledge {
+#skills {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
 }
-.knowledge {
+.skill {
     display: grid;
     gap: 3px;
-    grid-template-columns: 128px 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
     border: none;
 }
-
+.knowledge {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
 .knowledge h4, .knowledge p {
     margin: auto;
 }
+.kn-frame {
+    grid-column: 2;
+}
 
-.kn-title {
-    grid-column: 1 / span 2;
+.skill .title {
+    grid-column: 1 / span 3;
+}
+
+.skill .software-name {
+    grid-column: 2;
+}
+.skill .framework {
+    grid-column: 2;
 }
 
 .chart {
