@@ -16,12 +16,6 @@
         </div>
     </div>
 </div>
-<div class="knowledge card">
-    <h3 class="kn-title">Languages</h3>
-    <h4>Spanish</h4><p>Native</p>
-    <h4>Catalan</h4><p>Native</p>
-    <h4>English</h4><p>B2</p>
-</div>
 <hr>
 <div class="chart">
     <h2>My Github contributions last year</h2>

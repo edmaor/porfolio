@@ -80,5 +80,13 @@
                 "frameworks": ["Github", "Gitlab"]
             }
         ]
+    },
+    {
+        "title": "Languages",
+        "knowledge":[
+            {"name":"Spanish", "frameworks":"Native"},
+            {"name":"Catalan", "frameworks":"Native"},
+            {"name":"English", "frameworks":"B2"}
+        ]
     }
 ]
