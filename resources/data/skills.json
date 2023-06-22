@@ -84,9 +84,9 @@
     {
         "title": "Languages",
         "knowledge":[
-            {"name":"Spanish", "frameworks":"Native"},
-            {"name":"Catalan", "frameworks":"Native"},
-            {"name":"English", "frameworks":"B2"}
+            {"name":"Spanish", "frameworks":["Native"]},
+            {"name":"Catalan", "frameworks":["Native"]},
+            {"name":"English", "frameworks":["B2"]}
         ]
     }
 ]
